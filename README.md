@@ -14,7 +14,7 @@ git clone https://github.com/seu-usuario/valorant-bot.git
 ```bash
 pip install -r requirements.txt
 ```
-3. Execute o script main.py.
+3. Execute o script trigger_bot.py.
 ```bash
 python trigger_pixel_color/trigger_bot.py
 ```
