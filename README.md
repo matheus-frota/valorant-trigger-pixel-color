@@ -1,4 +1,4 @@
-# Valorant Bot Readme
+# TriggerBot pixel color
 
 Essa é um bot trigger em Python que automatiza o disparo das armas com base na identificação do inimico a partir da coloração do contorno do próprio.
 
