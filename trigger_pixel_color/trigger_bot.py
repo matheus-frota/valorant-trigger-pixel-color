@@ -5,7 +5,7 @@ import numpy as np
 import pyautogui as pag
 import pygetwindow as gw
 
-from trigger_pixel_color.config import HEIGHT, WIDTH
+from trigger_pixel_color.config import HEIGHT, WIDTH, BUTTON_PRESS_TIME
 
 
 def get_screeshot(type = 'all'):
@@ -50,7 +50,7 @@ def check_fire(screen, show=False):
 
     if enemy(r_mean):
         pag.mouseDown()
-        time.sleep(0.2)
+        time.sleep(BUTTON_PRESS_TIME)
         pag.mouseUp()
 
 
