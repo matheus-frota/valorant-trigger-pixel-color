@@ -1,18 +1,12 @@
-from contextlib import contextmanager
-import os
 import time
 
-import keyboard
 from matplotlib import pyplot as plt
 import numpy as np
 import pyautogui as pag
 import pygetwindow as gw
-import win32api
 
-from config import HEIGHT, WIDTH
+from trigger_pixel_color.config import HEIGHT, WIDTH
 
-global atirando
-atirando = False
 
 def get_screeshot(type = 'all'):
     window = gw.getWindowsWithTitle('VALORANT')[0]
@@ -60,33 +54,5 @@ def check_fire(screen, show=False):
         pag.mouseUp()
 
 
-def banner():
-    return """
-    .-----.    _                          .---.       .-. 
-    `-. .-'   :_;                         : .; :     .' `.
-    : :.--. .-. .--.  .--.  .--. .--.   :   .' .--.`. .'
-    : :: ..': :' .; :' .; :' '_.': ..'  : .; :' .; :: : 
-    :_;:_;  :_;`._. ;`._. ;`.__.':_;    :___.'`.__.':_; 
-                .-. : .-. :                             
-                `._.' `._.'                             
-    """
-
-
-def menu():
-    print(banner())
-    print('1 - Pressione "Ctrl" para atirar e parar de atirar.')
-    print('2 - Pressione "Ctrl+Alt" para fechar o programa.')
-    print("Pressione as teclas correspondentes para selecionar a opção")
-    while True:
-        screen = get_screeshot('extended-minor')
-        if keyboard.read_key() == 'ctrl':
-            print('Começar a atirar!')
-            check_fire(screen)
-
-        if keyboard.is_pressed('ctrl+alt'):
-            print("Fechando o programa...")
-            break
-
-
 if __name__ == '__main__':
-    menu()
+    check_fire()
